@@ -8,7 +8,7 @@ load_dotenv()
 
 # 1) Connect to the database here using the SQLAlchemy's create_engine function
 
-connection_string = f"postgresql://{os.getenv('gitpod')}:{os.getenv('postgres')}@{os.getenv('localhost')}/{os.getenv('sample-db')}"
+connection_string = f"postgresql://{os.getenv('DB_USER')}:{os.getenv('DB_PASSWORD')}@{os.getenv('DB_HOST')}/{os.getenv('DB_NAME')}"
 engine = create_engine(connection_string).execution_options(autocommit=True)
 engine.connect()
 
